@@ -14,9 +14,12 @@ class TeamFlowApp extends StatelessWidget {
         colorSchemeSeed: const Color(0xFF6C63FF),
         useMaterial3: true,
         brightness: Brightness.light,
+        scaffoldBackgroundColor: Colors.transparent,
         appBarTheme: const AppBarTheme(
           elevation: 0,
-          scrolledUnderElevation: 1,
+          scrolledUnderElevation: 0,
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
           centerTitle: false,
         ),
         cardTheme: CardThemeData(
@@ -29,7 +32,13 @@ class TeamFlowApp extends StatelessWidget {
         colorSchemeSeed: const Color(0xFF6C63FF),
         useMaterial3: true,
         brightness: Brightness.dark,
-        appBarTheme: const AppBarTheme(elevation: 0, scrolledUnderElevation: 1),
+        scaffoldBackgroundColor: Colors.transparent,
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          scrolledUnderElevation: 1,
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
+        ),
       ),
       themeMode: ThemeMode.system,
     );

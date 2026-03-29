@@ -17,11 +17,11 @@ import '../domain/usecases/get_projects_usecase.dart';
 import '../domain/usecases/get_users_usecase.dart';
 import '../domain/usecases/get_user_detail_usecase.dart';
 
-// ── Network ──────────────────────────────────────────────────────────────────
+// ── Network
 
 final dioProvider = Provider<Dio>((ref) => DioClient.instance.dio);
 
-// ── Data sources ─────────────────────────────────────────────────────────────
+// Data sources
 
 final taskDataSourceProvider = Provider<TaskRemoteDataSource>(
   (ref) => TaskRemoteDataSourceImpl(ref.watch(dioProvider)),
@@ -35,7 +35,7 @@ final userDataSourceProvider = Provider<UserRemoteDataSource>(
   (ref) => UserRemoteDataSourceImpl(ref.watch(dioProvider)),
 );
 
-// ── Repositories (UI depends on the abstract interface, never the impl) ──────
+// ── Repositories (UI depends on the abstract interface, never the impl)
 
 final taskRepositoryProvider = Provider<TaskRepository>(
   (ref) => TaskRepositoryImpl(ref.watch(taskDataSourceProvider)),
@@ -49,7 +49,7 @@ final userRepositoryProvider = Provider<UserRepository>(
   (ref) => UserRepositoryImpl(ref.watch(userDataSourceProvider)),
 );
 
-// ── Use cases ────────────────────────────────────────────────────────────────
+// Use case
 
 final getTasksUseCaseProvider = Provider(
   (ref) => GetTasksUseCase(ref.watch(taskRepositoryProvider)),
